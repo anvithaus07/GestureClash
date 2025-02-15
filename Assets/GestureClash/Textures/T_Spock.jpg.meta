@@ -3,8 +3,8 @@ guid: 20c2f82e1528efa438be3ac4a87e3c5f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6471591198857129826
-    second: rock-paper-scissors-icon-6_0
+      213: -1415145823380156269
+    second: T_Spock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rock-paper-scissors-icon-6_0
+      name: T_Spock_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e909394b71a4036a0800000000000000
-      internalID: -6471591198857129826
+      spriteID: 3905c041f546c5ce0800000000000000
+      internalID: -1415145823380156269
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      rock-paper-scissors-icon-6_0: -6471591198857129826
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

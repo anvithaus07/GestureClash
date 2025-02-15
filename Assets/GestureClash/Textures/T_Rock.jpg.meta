@@ -3,8 +3,8 @@ guid: 6e9201eb31c2c5148808385c739884d9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4888893415435871364
-    second: spock-icon-4_0
+      213: -9080558473290477247
+    second: T_Rock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spock-icon-4_0
+      name: T_Rock_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7bd2345759272cb0800000000000000
-      internalID: -4888893415435871364
+      spriteID: 1419b5ded206bf180800000000000000
+      internalID: -9080558473290477247
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      spock-icon-4_0: -4888893415435871364
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

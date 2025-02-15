@@ -3,8 +3,8 @@ guid: 5bff36275805f37429d50b2dd4e0c357
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3444195061523392091
-    second: imageedit_5_9037831828_0
+      213: -8586383530837252998
+    second: T_Lizard_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: imageedit_5_9037831828_0
+      name: T_Lizard_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b56a14b092d3ccf20800000000000000
-      internalID: 3444195061523392091
+      spriteID: a746e2bdba907d880800000000000000
+      internalID: -8586383530837252998
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      imageedit_5_9037831828_0: 3444195061523392091
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
