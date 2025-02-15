@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,20 +13,36 @@ namespace GestureClash
 
         private void Awake()
         {
-            _screenHolder = GameObject.FindFirstObjectByType<Canvas>().transform;
+            _screenHolder = FindFirstObjectByType<Canvas>().transform;
             ASignal<ShowScreenById>.AddListener(OnShowScreenRequested);
+            ASignal<HideScreenWithID>.AddListener(OnHideScreenRequested);
         }
 
         private void OnDestroy()
         {
             ASignal<ShowScreenById>.RemoveListener(OnShowScreenRequested);
+            ASignal<HideScreenWithID>.RemoveListener(OnHideScreenRequested);
         }
 
-       
+
         private void OnShowScreenRequested(ShowScreenById request)
         {
             ShowScreen(request.ScreenId, request.ScreenData);
         }
+
+        private void OnHideScreenRequested(HideScreenWithID request)
+        {
+            HideScreen(request.ScreenID);
+        }
+
+        public void HideScreen(ScreenId screenId)
+        {
+            if (_screenInstances.TryGetValue(screenId, out var screen))
+            {
+                screen.Hide();
+            }
+        }
+
         public void ShowScreen(ScreenId screenId, object screenData)
         {
             if (!_screenInstances.TryGetValue(screenId, out var screen))
@@ -62,6 +77,15 @@ namespace GestureClash
         {
             ScreenId = screenId;
             ScreenData = screenData;
+        }
+    }
+    public class HideScreenWithID
+    {
+        public ScreenId ScreenID { get; }
+
+        public HideScreenWithID(ScreenId screenId)
+        {
+            ScreenID = screenId;
         }
     }
 }

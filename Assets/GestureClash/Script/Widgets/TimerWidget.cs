@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +16,13 @@ namespace GestureClash
         [SerializeField] private Color _defaultFontColor;
         [SerializeField] private Color _warningFontColor;
 
+        #region Unity Methods
+        private void OnDisable()
+        {
+            _timer.DOKill();
+        }
 
+        #endregion Unity Methods
         public void InitializeTimer(float duration)
         {
             StartTimer(duration);

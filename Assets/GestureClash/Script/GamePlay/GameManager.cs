@@ -10,6 +10,7 @@ namespace GestureClash
         Bot
     }
     public class OnGameStartedSignal { }
+    public class OnGameRestartedSignal { }
     public class OnGameEndSignal
     {
 
@@ -49,8 +50,7 @@ namespace GestureClash
         #region UnityMethods
         private void OnEnable()
         {
-            AddListeners();
-            SetUpGame();
+            StartGame();
         }
 
         private void OnDisable()
@@ -62,18 +62,22 @@ namespace GestureClash
 
         private void AddListeners()
         {
+            RemoveListeners();
             ASignal<OnTimerEndSignal>.AddListener(OnTimerEnd);
             ASignal<OnPlayerInputReceivedSignal>.AddListener(OnPlayerInputReceived);
+            ASignal<OnGameRestartedSignal>.AddListener(OnGameRestarted);
         }
 
         private void RemoveListeners()
         {
             ASignal<OnTimerEndSignal>.RemoveAllListener();
             ASignal<OnPlayerInputReceivedSignal>.RemoveAllListener();
-
+            ASignal<OnGameRestartedSignal>.RemoveAllListener();
         }
-        private void SetUpGame()
+        private void StartGame()
         {
+            AddListeners();
+
             _playerInput = InputHandler.GetInputType(false);
             _botInput = InputHandler.GetInputType(true);
             ASignal<ShowScreenById>.Dispatch(new ShowScreenById(ScreenId.GamePlayScreen, null));
@@ -115,8 +119,14 @@ namespace GestureClash
         private IEnumerator RestartGame()
         {
             yield return new WaitForSeconds(5.0f);
+
+            ASignal<HideScreenWithID>.Dispatch(new HideScreenWithID(ScreenId.GamePlayScreen));
             ASignal<ShowScreenById>.Dispatch(new ShowScreenById(ScreenId.GameRestartScreen, null));
         }
 
+        private void OnGameRestarted(OnGameRestartedSignal data)
+        {
+            StartGame();
+        }
     }
 }

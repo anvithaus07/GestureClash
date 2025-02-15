@@ -13,8 +13,10 @@ public abstract class BaseScreen : MonoBehaviour
     public virtual void Hide()
     {
         gameObject.SetActive(false);
+        OnHideScreen();
     }
 
     protected abstract void OnScreenShown(object screenData = null);
+    protected abstract void OnHideScreen();
 
 }

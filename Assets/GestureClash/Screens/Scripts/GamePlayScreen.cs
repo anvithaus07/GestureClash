@@ -18,6 +18,11 @@ namespace GestureClash
         {
             SetUpGameUI();
         }
+
+        protected override void OnHideScreen()
+        {
+
+        }
         private void SetUpGameUI()
         {
             _gesturePanel.InitializeGamePlayElements();
