@@ -45,15 +45,15 @@ public class StatusDisplayWidget : MonoBehaviour
         switch(data.GameResult)
         {
             case GameResult.Tie:
-                _statusText.text = "IT'S A TIE!!";
+                _statusText.text = "It's a tie!!";
                 return;
 
             case GameResult.Win:
-                _statusText.text = "YOU BEAT THE BOT!!";
+                _statusText.text = "You Win!";
                 return;
 
             case GameResult.Lost:
-                _statusText.text = "BOT BEATS YOU!!";
+                _statusText.text = "You lost!";
                 return;
 
 

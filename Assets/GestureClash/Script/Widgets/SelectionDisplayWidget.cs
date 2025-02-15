@@ -46,7 +46,7 @@ public class SelectionDisplayWidget : MonoBehaviour
             SetGestureIcon(data.GestureType);
 
             var gestureElementName = _gestureCollectionData.GetGestureData(data.GestureType).GestureName;
-            SetInfoText(string.Format("{0} has chosen {1}", data.CompetitorType, gestureElementName));
+            SetInfoText(string.Format("{0} chose {1}", data.CompetitorType, gestureElementName));
         }
     }
 }
