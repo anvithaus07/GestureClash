@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b04d476b724b6645764bb318e7b55a34776b8d23f07513ffb857be939bac00d1
-size 773
+using GestureClash;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GestureWidgetsPanel : MonoBehaviour
+{
+    [SerializeField] private GestureCollectionData _gestureCollectionData;
+    [SerializeField] private GestureWidget _gestureWidget;
+    [SerializeField] private HorizontalLayoutGroup _widgetHolder;
+
+    public void InitializeGamePlayElements()
+    {
+        var gestureData = _gestureCollectionData.GetAllGestures();
+        foreach(GestureData gesture in gestureData)
+        {
+            GestureWidget gestureElement = Instantiate(_gestureWidget, _widgetHolder.transform);
+            gestureElement.InitializeGestureElement(gesture);
+        }
+    }
+}
