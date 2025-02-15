@@ -31,6 +31,14 @@ namespace GestureClash.UI
         {
             ASignal<OnPlayerInputReceivedSignal>.Dispatch(new OnPlayerInputReceivedSignal(gestureType));
             ASignal<OnTimerEndSignal>.RemoveAllListener();
+            DisableAllElements();
+        }
+
+        private void DisableAllElements()
+        {
+            var gamePlayElements = _widgetHolder.GetComponentsInChildren<GestureWidget>();
+            foreach (GestureWidget element in gamePlayElements)
+                element.SetButtonInteractibility(false);
         }
     }
 }

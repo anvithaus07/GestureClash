@@ -9,7 +9,7 @@ namespace GestureClash.EditorTools
     public static class ScreenIdGenerator
     {
 
-        private const string ScreenIdFilePath = "Assets/GestureClash/Screens/Scripts/ScreenId.cs";
+        private const string ScreenIdFilePath = "Assets/GestureClash/Script/GameScreens/Managers/ScreenId.cs";
 
 
         [MenuItem("GestureClash/Generate ScreenId Enum")]

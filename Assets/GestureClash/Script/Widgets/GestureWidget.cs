@@ -39,6 +39,7 @@ namespace GestureClash.UI
             OnGestureSelected = onGestureSelected;
             _gestureType = gestureData.GestureType;
 
+            SetButtonInteractibility(true);
             SetGestureIcon(gestureData.GestureIcon);
             SetGestureName();
         }
@@ -55,6 +56,11 @@ namespace GestureClash.UI
         private void OnGestureButtonClick()
         {
             OnGestureSelected?.Invoke(_gestureType);
+        }
+
+        public void SetButtonInteractibility(bool canInteract)
+        {
+            _gestureButton.interactable = canInteract;
         }
     }
 }
