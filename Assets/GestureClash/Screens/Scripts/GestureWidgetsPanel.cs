@@ -29,5 +29,6 @@ public class GestureWidgetsPanel : MonoBehaviour
     private void OnGestureButtonClick(GestureType gestureType)
     {
         ASignal<OnPlayerInputReceivedSignal>.Dispatch(new OnPlayerInputReceivedSignal(gestureType));
+        ASignal<OnTimerEndSignal>.RemoveAllListener();
     }
 }

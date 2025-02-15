@@ -10,7 +10,7 @@ public class StatusDisplayWidget : MonoBehaviour
     private void OnEnable()
     {
         ASignal<OnGameStartedSignal>.AddListener(OnGameStarted);
-        ASignal<OnPlayerInputReceivedSignal>.AddListener(OnInputsReceived);
+        ASignal<OnInputsReceivedSignal>.AddListener(OnInputsReceived);
         ASignal<OnTimerEndSignal>.AddListener(OnTimerEnd);
         ASignal<OnGameEndSignal>.AddListener(OnGameEnd);
     }
@@ -18,7 +18,7 @@ public class StatusDisplayWidget : MonoBehaviour
     private void OnDisable()
     {
         ASignal<OnGameStartedSignal>.RemoveListener(OnGameStarted);
-        ASignal<OnPlayerInputReceivedSignal>.RemoveListener(OnInputsReceived);
+        ASignal<OnInputsReceivedSignal>.RemoveListener(OnInputsReceived);
         ASignal<OnTimerEndSignal>.RemoveListener(OnTimerEnd);
         ASignal<OnGameEndSignal>.RemoveListener(OnGameEnd);
 
@@ -30,7 +30,7 @@ public class StatusDisplayWidget : MonoBehaviour
     {
         _statusText.text = "Waiting for input...";
     }
-    private void OnInputsReceived(OnPlayerInputReceivedSignal data)
+    private void OnInputsReceived(OnInputsReceivedSignal data)
     {
         _statusText.text = "Checking results...";
     }

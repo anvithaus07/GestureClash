@@ -20,5 +20,9 @@ namespace GestureClash
         {
             OnSignal?.Invoke(signal);
         }
+        public static void RemoveAllListener()
+        {
+            OnSignal = null;
+        }
     }
 }
