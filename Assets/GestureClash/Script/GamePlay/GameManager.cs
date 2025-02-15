@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace GestureClash
@@ -75,6 +76,7 @@ namespace GestureClash
         {
             _playerInput = InputHandler.GetInputType(false);
             _botInput = InputHandler.GetInputType(true);
+            ASignal<ShowScreenById>.Dispatch(new ShowScreenById(ScreenId.GamePlayScreen, null));
             ASignal<OnGameStartedSignal>.Dispatch(new OnGameStartedSignal());
 
         }
@@ -88,6 +90,7 @@ namespace GestureClash
                    (5 + playerInput - botInput) % 5 % 2 == 1 ? GameResult.Win : GameResult.Lost;
 
             ASignal<OnGameEndSignal>.Dispatch(new OnGameEndSignal(result));
+            StartCoroutine(RestartGame());
         }
 
         private void OnTimerEnd(OnTimerEndSignal data)
@@ -107,6 +110,12 @@ namespace GestureClash
             ASignal<OnInputsReceivedSignal>.Dispatch(new OnInputsReceivedSignal(CompetitorType.Player, _playerInput.GetSelectedGesture()));
 
             DetermineWinner();
+        }
+
+        private IEnumerator RestartGame()
+        {
+            yield return new WaitForSeconds(3.0f);
+            ASignal<ShowScreenById>.Dispatch(new ShowScreenById(ScreenId.GameRestartScreen, null));
         }
 
     }

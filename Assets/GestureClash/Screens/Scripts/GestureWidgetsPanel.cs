@@ -8,6 +8,14 @@ public class GestureWidgetsPanel : MonoBehaviour
     [SerializeField] private GestureWidget _gestureWidget;
     [SerializeField] private HorizontalLayoutGroup _widgetHolder;
 
+    #region UnityMethods
+    private void OnDisable()
+    {
+        foreach (Transform child in _widgetHolder.transform)
+            Destroy(child.gameObject);
+    }
+
+    #endregion UnityMethods 
     public void InitializeGamePlayElements()
     {
         var gestureData = _gestureCollectionData.GetAllGestures();
