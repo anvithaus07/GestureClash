@@ -21,7 +21,7 @@ namespace GestureClash
 
         private void OnPlayButtonClicked()
         {
-            SceneManager.LoadScene("GameScene", LoadSceneMode.Additive);
+            SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
         }
     }
 }
