@@ -1,7 +1,8 @@
+using GestureClash.UI;
 using System.Collections;
 using UnityEngine;
 
-namespace GestureClash
+namespace GestureClash.GamePlay
 {
 
     public enum CompetitorType

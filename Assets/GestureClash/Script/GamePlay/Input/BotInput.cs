@@ -1,7 +1,7 @@
+using GestureClash.UI;
 using System;
-using UnityEngine;
 
-namespace GestureClash
+namespace GestureClash.GamePlay
 {
     public class BotInput : BasePlayerInput
     {

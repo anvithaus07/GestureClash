@@ -1,62 +1,64 @@
-using GestureClash;
+using GestureClash.GamePlay;
 using TMPro;
 using UnityEngine;
-
-public class StatusDisplayWidget : MonoBehaviour
+namespace GestureClash.UI
 {
-    [SerializeField] private TextMeshProUGUI _statusText;
-
-    #region UnityMethods
-    private void OnEnable()
+    public class StatusDisplayWidget : MonoBehaviour
     {
-        ASignal<OnGameStartedSignal>.AddListener(OnGameStarted);
-        ASignal<OnInputsReceivedSignal>.AddListener(OnInputsReceived);
-        ASignal<OnTimerEndSignal>.AddListener(OnTimerEnd);
-        ASignal<OnGameEndSignal>.AddListener(OnGameEnd);
-    }
+        [SerializeField] private TextMeshProUGUI _statusText;
 
-    private void OnDisable()
-    {
-        ASignal<OnGameStartedSignal>.RemoveListener(OnGameStarted);
-        ASignal<OnInputsReceivedSignal>.RemoveListener(OnInputsReceived);
-        ASignal<OnTimerEndSignal>.RemoveListener(OnTimerEnd);
-        ASignal<OnGameEndSignal>.RemoveListener(OnGameEnd);
-
-    }
-
-    #endregion UnityMethods 
-
-    private void OnGameStarted(OnGameStartedSignal data)
-    {
-        _statusText.text = "Waiting for input...";
-    }
-    private void OnInputsReceived(OnInputsReceivedSignal data)
-    {
-        _statusText.text = "Checking results...";
-    }
-
-    private void OnTimerEnd(OnTimerEndSignal data)
-    {
-        _statusText.text = "Time Complete!!!";
-    }
-
-    private void OnGameEnd(OnGameEndSignal data)
-    {
-        switch(data.GameResult)
+        #region UnityMethods
+        private void OnEnable()
         {
-            case GameResult.Tie:
-                _statusText.text = "It's a tie!!";
-                return;
+            ASignal<OnGameStartedSignal>.AddListener(OnGameStarted);
+            ASignal<OnInputsReceivedSignal>.AddListener(OnInputsReceived);
+            ASignal<OnTimerEndSignal>.AddListener(OnTimerEnd);
+            ASignal<OnGameEndSignal>.AddListener(OnGameEnd);
+        }
 
-            case GameResult.Win:
-                _statusText.text = "You Win!";
-                return;
+        private void OnDisable()
+        {
+            ASignal<OnGameStartedSignal>.RemoveListener(OnGameStarted);
+            ASignal<OnInputsReceivedSignal>.RemoveListener(OnInputsReceived);
+            ASignal<OnTimerEndSignal>.RemoveListener(OnTimerEnd);
+            ASignal<OnGameEndSignal>.RemoveListener(OnGameEnd);
 
-            case GameResult.Lost:
-                _statusText.text = "You lost!";
-                return;
+        }
+
+        #endregion UnityMethods 
+
+        private void OnGameStarted(OnGameStartedSignal data)
+        {
+            _statusText.text = "Waiting for input...";
+        }
+        private void OnInputsReceived(OnInputsReceivedSignal data)
+        {
+            _statusText.text = "Checking results...";
+        }
+
+        private void OnTimerEnd(OnTimerEndSignal data)
+        {
+            _statusText.text = "Time Complete!!!";
+        }
+
+        private void OnGameEnd(OnGameEndSignal data)
+        {
+            switch (data.GameResult)
+            {
+                case GameResult.Tie:
+                    _statusText.text = "It's a tie!!";
+                    return;
+
+                case GameResult.Win:
+                    _statusText.text = "You Win!";
+                    return;
+
+                case GameResult.Lost:
+                    _statusText.text = "You lost!";
+                    return;
 
 
+            }
         }
     }
 }

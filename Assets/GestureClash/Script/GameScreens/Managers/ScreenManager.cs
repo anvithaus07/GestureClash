@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GestureClash
+namespace GestureClash.UI
 {
     public class ScreenManager : MonoBehaviour
     {

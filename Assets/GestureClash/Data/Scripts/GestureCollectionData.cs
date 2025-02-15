@@ -1,8 +1,9 @@
+using GestureClash.UI;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace GestureClash
+namespace GestureClash.GamePlay
 {
     [CreateAssetMenu(fileName = "GestureWidgetData", menuName = "Scriptable Objects/GestureClash/GestureWidgetData")]
     public class GestureCollectionData : ScriptableObject

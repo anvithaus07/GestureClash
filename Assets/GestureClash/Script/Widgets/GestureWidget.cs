@@ -1,7 +1,8 @@
+using GestureClash.GamePlay;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-namespace GestureClash
+namespace GestureClash.UI
 {
     public enum GestureType
     {

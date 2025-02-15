@@ -1,22 +1,24 @@
 using System;
 using UnityEngine;
-
-public abstract class BaseScreen : MonoBehaviour
+namespace GestureClash.UI
 {
-    public ScreenId ScreenId => Enum.Parse<ScreenId>(gameObject.name);
-    public virtual void Show(object screenData)
+    public abstract class BaseScreen : MonoBehaviour
     {
-        gameObject.SetActive(true);
-        OnScreenShown(screenData);
+        public ScreenId ScreenId => Enum.Parse<ScreenId>(gameObject.name);
+        public virtual void Show(object screenData)
+        {
+            gameObject.SetActive(true);
+            OnScreenShown(screenData);
+        }
+
+        public virtual void Hide()
+        {
+            gameObject.SetActive(false);
+            OnHideScreen();
+        }
+
+        protected abstract void OnScreenShown(object screenData = null);
+        protected abstract void OnHideScreen();
+
     }
-
-    public virtual void Hide()
-    {
-        gameObject.SetActive(false);
-        OnHideScreen();
-    }
-
-    protected abstract void OnScreenShown(object screenData = null);
-    protected abstract void OnHideScreen();
-
 }

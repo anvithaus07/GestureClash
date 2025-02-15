@@ -1,10 +1,10 @@
-using GestureClash;
-using UnityEngine;
-
-public static class InputHandler 
+namespace GestureClash.GamePlay
 {
-    public static BasePlayerInput GetInputType(bool isBot)
+    public static class InputHandler
     {
-        return isBot ? new BotInput() : new PlayerInput();
+        public static BasePlayerInput GetInputType(bool isBot)
+        {
+            return isBot ? new BotInput() : new PlayerInput();
+        }
     }
 }

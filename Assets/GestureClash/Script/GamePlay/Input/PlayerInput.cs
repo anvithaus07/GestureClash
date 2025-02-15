@@ -1,5 +1,5 @@
-using UnityEngine;
-namespace GestureClash
+using GestureClash.UI;
+namespace GestureClash.GamePlay
 {
     public class PlayerInput : BasePlayerInput
     {

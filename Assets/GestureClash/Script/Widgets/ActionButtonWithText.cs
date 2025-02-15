@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GestureClash
+namespace GestureClash.UI
 {
     public class ActionButtonWithText : MonoBehaviour
     {

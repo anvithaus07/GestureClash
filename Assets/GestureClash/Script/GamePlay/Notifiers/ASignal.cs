@@ -1,6 +1,6 @@
 using System;
 
-namespace GestureClash
+namespace GestureClash.UI
 {
     public class ASignal<T>
     {

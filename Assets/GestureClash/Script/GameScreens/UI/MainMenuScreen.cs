@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-namespace GestureClash
+namespace GestureClash.UI
 {
     public class MainMenuScreen : MonoBehaviour
     {

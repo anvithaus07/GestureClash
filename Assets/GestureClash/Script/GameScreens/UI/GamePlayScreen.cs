@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GestureClash
+namespace GestureClash.UI
 {
     public enum GameResult
     {

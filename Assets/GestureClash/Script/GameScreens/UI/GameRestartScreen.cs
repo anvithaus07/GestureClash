@@ -1,9 +1,10 @@
 using DG.Tweening;
+using GestureClash.GamePlay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GestureClash
+namespace GestureClash.UI
 {
     public class GameRestartScreen : BaseScreen
     {
