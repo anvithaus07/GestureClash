@@ -1,10 +1,13 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace GestureClash
 {
+    public class OnTimerEndSignal { }
+
     public class TimerWidget : MonoBehaviour
     {
         [SerializeField] private Slider _timer;
@@ -25,6 +28,9 @@ namespace GestureClash
             _timer.DOValue(0, duration).SetEase(Ease.Linear).OnUpdate(() =>
             {
                 OnTimerValueUpdated(duration * _timer.value);
+            }).OnComplete(() =>
+            {
+                ASignal<OnTimerEndSignal>.Dispatch(new OnTimerEndSignal());
             });
         }
 

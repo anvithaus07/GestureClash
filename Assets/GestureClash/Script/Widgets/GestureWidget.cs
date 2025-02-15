@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c6fa6a0710eea915028bfcdb7cf1e842a80a91d01c9e5ff9ee4171a64ce6cd1
-size 726
+using UnityEngine;
+using UnityEngine.UI;
+namespace GestureClash
+{
+    public enum GestureType
+    {
+        Rock,
+        Paper,
+        Scissor,
+        Lizard,
+        Spock
+    }
+    public class GestureWidget : MonoBehaviour
+    {
+        [SerializeField] private Image _gestureIcon;
+        [SerializeField] private Button _gestureButton;
+
+        public void InitializeGestureElement(GestureData gestureType)
+        {
+            SetGestureIcon(gestureType.GestureIcon);
+            SetGestureName();
+        }
+
+        private void SetGestureIcon(Sprite icon)
+        {
+            _gestureIcon.sprite = icon;
+        }
+
+        private void SetGestureName()
+        {
+        }
+    }
+}
