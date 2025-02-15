@@ -33,9 +33,9 @@ namespace GestureClash
     public class OnInputsReceivedSignal
     {
         public CompetitorType CompetitorType;
-        public GestureType GestureType;
+        public GestureType? GestureType;
 
-        public OnInputsReceivedSignal(CompetitorType competitorType, GestureType gestureType)
+        public OnInputsReceivedSignal(CompetitorType competitorType, GestureType? gestureType)
         {
             CompetitorType = competitorType;
             GestureType = gestureType;
@@ -87,8 +87,8 @@ namespace GestureClash
 
         private void DetermineWinner()
         {
-            GestureType playerInput = _playerInput.GetSelectedGesture();
-            GestureType botInput = _botInput.GetSelectedGesture();
+            GestureType playerInput = _playerInput.GetSelectedGesture().Value;
+            GestureType botInput = _botInput.GetSelectedGesture().Value;
 
             var result =  playerInput == botInput ? GameResult.Tie :
                    (5 + playerInput - botInput) % 5 % 2 == 1 ? GameResult.Win : GameResult.Lost;
@@ -99,7 +99,9 @@ namespace GestureClash
 
         private void OnTimerEnd(OnTimerEndSignal data)
         {
-            CheckForGameResult();
+            _playerInput.SetGestureType(null);
+            ASignal<OnInputsReceivedSignal>.Dispatch(new OnInputsReceivedSignal(CompetitorType.Bot, _botInput?.GetSelectedGesture()));
+            StartCoroutine(RestartGame());
         }
 
         private void OnPlayerInputReceived(OnPlayerInputReceivedSignal data)
@@ -110,8 +112,8 @@ namespace GestureClash
 
         private void CheckForGameResult()
         {
-            ASignal<OnInputsReceivedSignal>.Dispatch(new OnInputsReceivedSignal(CompetitorType.Bot, _botInput.GetSelectedGesture()));
-            ASignal<OnInputsReceivedSignal>.Dispatch(new OnInputsReceivedSignal(CompetitorType.Player, _playerInput.GetSelectedGesture()));
+            ASignal<OnInputsReceivedSignal>.Dispatch(new OnInputsReceivedSignal(CompetitorType.Bot, _botInput?.GetSelectedGesture()));
+            ASignal<OnInputsReceivedSignal>.Dispatch(new OnInputsReceivedSignal(CompetitorType.Player, _playerInput?.GetSelectedGesture()));
 
             DetermineWinner();
         }
