@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9ffe8e18db508e7784e60fbdd69e1eeaaf5dfbd36944afe90be1a257ae75fa70
-size 1105
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe4a42e128c84240b24844cccc0aea8, type: 3}
+  m_Name: GestureWidgetData
+  m_EditorClassIdentifier: 
+  _gesturesData:
+  - _gestureType: 0
+    _gestureIcon: {fileID: -4888893415435871364, guid: 6e9201eb31c2c5148808385c739884d9, type: 3}
+    _gestureName: Rock
+  - _gestureType: 1
+    _gestureIcon: {fileID: 8464008623452710837, guid: 87603f7d382ead444abd4cf8ca89e2d7, type: 3}
+    _gestureName: Paper
+  - _gestureType: 2
+    _gestureIcon: {fileID: 3928169342494836126, guid: bcdbc3883c676f7409c5bccb7b741cb6, type: 3}
+    _gestureName: Scissors
+  - _gestureType: 3
+    _gestureIcon: {fileID: 3444195061523392091, guid: 5bff36275805f37429d50b2dd4e0c357, type: 3}
+    _gestureName: Lizard
+  - _gestureType: 4
+    _gestureIcon: {fileID: -6471591198857129826, guid: 20c2f82e1528efa438be3ac4a87e3c5f, type: 3}
+    _gestureName: Spock

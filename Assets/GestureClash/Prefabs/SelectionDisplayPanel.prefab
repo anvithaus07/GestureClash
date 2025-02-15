@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d12cde15b0a8b94c8a2d1ef9178d8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _competitorType: 0
   _infoText: {fileID: 8037480853528712044}
   _gestureIcon: {fileID: 8480493286477189810}
   _gestureCollectionData: {fileID: 11400000, guid: da84435c0fd134f4298f87eee6256e3f, type: 2}
@@ -296,8 +297,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 89.34
-  m_fontSizeBase: 89.34
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

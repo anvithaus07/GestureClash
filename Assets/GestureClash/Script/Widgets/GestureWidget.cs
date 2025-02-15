@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 namespace GestureClash
@@ -15,9 +16,29 @@ namespace GestureClash
         [SerializeField] private Image _gestureIcon;
         [SerializeField] private Button _gestureButton;
 
-        public void InitializeGestureElement(GestureData gestureType)
+        private Action<GestureType> OnGestureSelected;
+        private GestureType _gestureType;
+
+
+        #region UnityMethods
+        private void OnEnable()
         {
-            SetGestureIcon(gestureType.GestureIcon);
+            _gestureButton.onClick.AddListener(OnGestureButtonClick);
+        }
+
+        private void OnDisable()
+        {
+            _gestureButton.onClick.RemoveAllListeners();
+        }
+
+        #endregion UnityMethods 
+
+        public void InitializeGestureElement(GestureData gestureData,Action<GestureType> onGestureSelected)
+        {
+            OnGestureSelected = onGestureSelected;
+            _gestureType = gestureData.GestureType;
+
+            SetGestureIcon(gestureData.GestureIcon);
             SetGestureName();
         }
 
@@ -28,6 +49,11 @@ namespace GestureClash
 
         private void SetGestureName()
         {
+        }
+
+        private void OnGestureButtonClick()
+        {
+            OnGestureSelected?.Invoke(_gestureType);
         }
     }
 }

@@ -498,6 +498,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePlayScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 3782488725807931410, guid: de4016775feef614abc5280969112a36, type: 3}
+      propertyPath: m_Name
+      value: StatusDisplayPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388205124064681457, guid: de4016775feef614abc5280969112a36, type: 3}
+      propertyPath: m_Name
+      value: StatusText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199591332505062576, guid: de4016775feef614abc5280969112a36, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 7862561586520866894, guid: de4016775feef614abc5280969112a36, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
